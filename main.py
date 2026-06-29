@@ -27,6 +27,14 @@ st.set_page_config(
 st.title("🏆 Dashboard Analítico - Copa do Mundo 2026")
 st.markdown("""Dashboard desenvolvido para a disciplina de **Banco de Dados II**.""")
 
+st.info(
+    """
+    **Bases de dados utilizadas:**
+    - `jogadores_selecoes_.csv` — informações dos jogadores (nome, posição, idade, clube, gols, assistências, atributos etc.).
+    - `teams.csv` — informações das seleções (grupo, código FIFA e demais dados utilizados na integração).
+    """
+)
+
 st.divider()
 
 # CARREGAR DADOS
