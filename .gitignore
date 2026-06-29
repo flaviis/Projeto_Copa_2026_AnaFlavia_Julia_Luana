@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ambiente virtual
+.venv/
+venv/
+env/
+
+# Credenciais do Google Cloud
+credenciais.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# VS Code (opcional)
+.vscode/

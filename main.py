@@ -1,17 +1,111 @@
 import streamlit as st
-import pandas as pd
-import plotly.express as px
+from card_jogador.card_jogador import mostrar_jogador
 
-df = pd.DataFrame({
-"Mês": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
-"Vendas": [120, 145, 98, 200, 175, 230],
-"Clientes": [40, 55, 35, 80, 70, 95],
-})
+from utils.carregar_dados import carregar_dados
+from utils.filtros import aplicar_filtros
+from utils.KPIs import mostrar_kpis
 
-st.title("Dashboard de teste")
+from utils.graficos import (
+    grafico_posicoes,
+    grafico_top_gols,
+    grafico_top_assistencias,
+    grafico_idades,
+    grafico_clubes,
+    grafico_atributos,
+)
 
-st.header("ola, meu nome é Flávia!")
+# CONFIGURAÇÃO DA PÁGINA
 
-st.write("Esse é um texto simples")
+st.set_page_config(
+    page_title="Dashboard Copa do Mundo",
+    page_icon="🏆",
+    layout="wide"
+)
 
-st.dataframe(df, use_container_width =True)
+
+# TÍTULO
+
+st.title("🏆 Dashboard Copa do Mundo")
+st.markdown("### Análise Estatística dos Jogadores das Seleções")
+
+
+# =====================================================
+# CARREGAR DADOS
+# =====================================================
+
+df = carregar_dados()
+
+
+# =====================================================
+# FILTROS
+# =====================================================
+
+df_filtrado = aplicar_filtros(df)
+
+
+# =====================================================
+# KPIs
+# =====================================================
+
+mostrar_kpis(df_filtrado)
+
+st.divider()
+
+
+# =====================================================
+# PRIMEIRA LINHA
+# =====================================================
+
+col1, col2 = st.columns(2)
+
+with col1:
+    grafico_posicoes(df_filtrado)
+
+with col2:
+    grafico_top_gols(df_filtrado)
+
+
+# =====================================================
+# SEGUNDA LINHA
+# =====================================================
+
+col3, col4 = st.columns(2)
+
+with col3:
+    grafico_top_assistencias(df_filtrado)
+
+with col4:
+    grafico_idades(df_filtrado)
+
+
+# =====================================================
+# TERCEIRA LINHA
+# =====================================================
+
+col5, col6 = st.columns(2)
+
+with col5:
+    grafico_clubes(df_filtrado)
+
+with col6:
+    grafico_atributos(df_filtrado)
+
+
+st.divider()
+
+
+# =====================================================
+# CARD DO JOGADOR
+# =====================================================
+
+st.subheader("👤 Perfil do Jogador")
+
+mostrar_jogador(df_filtrado)
+
+
+# =====================================================
+# RODAPÉ
+# =====================================================
+
+st.markdown("---")
+st.caption("Projeto Final - Banco de Dados II | IFNMG - Campus Almenara")
