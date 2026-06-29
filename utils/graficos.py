@@ -37,7 +37,7 @@ def grafico_top_gols(df):
         x="gols_clube",
         y="nome",
         orientation="h",
-        title="Ranking dos 10 Maiores Artilheiros",
+        title="Ranking dos 10 Maiores Artilheiros dos Clubes",
         text="gols_clube"
     )
 
@@ -66,7 +66,7 @@ def grafico_top_assistencias(df):
         x="assistencias_clube",
         y="nome",
         orientation="h",
-        title="Ranking dos 10 Maiores Assistentes",
+        title="Ranking dos 10 Maiores Assistentes dos Clubes",
         text="assistencias_clube"
     )
 
