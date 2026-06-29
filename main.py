@@ -81,7 +81,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 grafico_clubes(df)
 
-# SELEÇÕES
+# SELEÇÕES - MEDIA GOLS POSIÇÃO
 
 col5, col6, = st.columns(2, gap="large")
 
