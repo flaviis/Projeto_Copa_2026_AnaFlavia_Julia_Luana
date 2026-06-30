@@ -19,7 +19,7 @@ O dashboard permite visualizar estatísticas dos jogadores por meio de gráficos
 Foram utilizadas duas bases de dados em formato CSV:
 
 - **jogadores_selecoes_.csv**: contém informações dos jogadores, como nome, seleção, posição, idade, clube, gols, assistências, partidas e atributos técnicos.
-- **teams.csv**: contém informações complementares das seleções (grupo, código FIFA e demais dados utilizados na integração), utilizadas na integração dos dados.
+- **teams.csv**: contém informações complementares das seleções (grupo, código FIFA e demais dados), utilizadas na integração dos dados.
 
 ## Funcionalidades
 
